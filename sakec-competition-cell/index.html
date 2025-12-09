@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAKEC Competition Cell</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="page-title">SAKEC Competition Cell</h1>
+            <p class="page-subtitle">Fostering Innovation and Excellence Through Competitive Events</p>
+        </div>
+    </header>
+
+    <!-- Image Carousel Section -->
+    <section class="carousel-section">
+        <div class="container">
+            <div class="carousel-wrapper">
+                <div class="carousel">
+                    <div class="carousel-slide active">
+                        <!-- Replace with competition banners -->
+                        <img src="assets/images/c1.jpg" alt="Coding Competition">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="assets/images/c2.jpg" alt="Design Competition">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="assets/images/c3.jpg" alt="Hackathon Event">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="assets/images/c4.png" alt="Innovation Challenge">
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
+                <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
+
+                <!-- Carousel Dots -->
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <!-- Logo Column -->
+                <div class="about-logo">
+                    <!-- Replace with Competition Cell Logo -->
+                    <img src="assets/images/cc_logo.jpg" alt="Competition Cell Logo" height=250 width=250>
+                </div>
+
+                <!-- Text Column -->
+                <div class="about-text">
+                    <h2 class="section-heading">About Us</h2>
+                    <p class="about-description">
+                        The SAKEC Competition Cell is a dynamic platform dedicated to fostering innovation, creativity, and excellence among students. We organize and manage a diverse range of competitions spanning technical, design, and entrepreneurial domains.
+                    </p>
+
+                    <h3 class="subsection-heading">Vision</h3>
+                    <p class="about-description">
+                        To create a vibrant ecosystem where students can showcase their talents, challenge themselves, and develop skills that prepare them for real-world challenges.
+                    </p>
+
+                    <h3 class="subsection-heading">Faculty Coordinators</h3>
+                    <p class="about-description">
+                         Mr. Manoj Dhande
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Action Buttons Section -->
+    <section class="buttons-section">
+        <div class="container">
+            <div class="buttons-grid">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSemb8Aesh4Czp-Nwi1JKIgEdmETFd7knc7JOq7hFUCg3-XWkQ/viewform" class="action-btn">Universal Form</a>
+                <a href="#" class="action-btn">Winner Details</a>
+                
+                <!-- Coordinators Dropdown -->
+                <div class="dropdown">
+                    <button class="action-btn dropdown-btn">Coordinators ▼</button>
+                    <div class="dropdown-content">
+                        <a href="#">Student Coordinators</a>
+                        <a href="#">Faculty Coordinators</a>
+                    </div>
+                </div>
+
+                <a href="https://docs.google.com/document/d/1tiUpA-rlIS-xTN_vUavQo4bKXRMCOKg38YnVa5-ee5M/edit?tab=t.0" class="action-btn">List of Competitions</a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section class="objectives-section">
+        <div class="container">
+            <div class="box-container">
+                <h3 class="box-heading">Objectives</h3>
+                <ul class="objectives-list">
+                    <li>Provide a platform for students to showcase their talents and skills.</li>
+                    <li>Foster innovation and creative thinking among the student community.</li>
+                    <li>Develop leadership and teamwork capabilities.</li>
+                    <li>Bridge the gap between academic learning and practical application.</li>
+                    <li>Encourage healthy competition and peer learning.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Announcements Section -->
+    <section class="announcements-section">
+        <div class="container">
+            <h2 class="section-heading announcements-heading">Announcements</h2>
+            <div class="announcements-list">
+                <a href="#" class="announcement-item">Winner List – Intercollege Coding Challenge 2025</a>
+                <a href="#" class="announcement-item">Poster Design Competition Registrations Open</a>
+                <a href="#" class="announcement-item">Hackathon 2025 – Call for Participants</a>
+                <a href="#" class="announcement-item">Innovation Challenge – Problem Statements Released</a>
+                <a href="#" class="announcement-item">Web Development Competition – Registration Deadline Extended</a>
+                <a href="#" class="announcement-item">Photography Contest – Theme Announcement</a>
+            </div>
+            <a href="#" class="view-all-link">View All →</a>
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
