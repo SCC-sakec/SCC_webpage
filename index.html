@@ -389,9 +389,9 @@ $this.closest('.et_pb_accordion').removeClass('et_pb_accordion_toggling');
 		<section class="buttons-section" id="buttons">
 			<div class="container">
 				<div class="buttons-wrapper">
-					<a href="https://docs.google.com/forms/d/e/1FAIpQLSemb8Aesh4Czp-Nwi1JKIgEdmETFd7knc7JOq7hFUCg3-XWkQ/viewform" class="action-link">Universal Form</a>
-					<a href="#" class="action-link">Winner Details</a>
-					<a href="https://docs.google.com/document/d/1tiUpA-rlIS-xTN_vUavQo4bKXRMCOKg38YnVa5-ee5M/edit?tab=t.0" class="action-link">List of Competitions</a>
+					<a href="https://docs.google.com/forms/d/e/1FAIpQLSemb8Aesh4Czp-Nwi1JKIgEdmETFd7knc7JOq7hFUCg3-XWkQ/viewform" class="action-btn">Universal Form</a>
+					<a href="#" class="action-btn">Winner Details</a>
+					<a href="https://docs.google.com/document/d/1tiUpA-rlIS-xTN_vUavQo4bKXRMCOKg38YnVa5-ee5M/edit?tab=t.0" class="action-btn">List of Competitions</a>
 				</div>
 			</div>
 		</section>
@@ -399,12 +399,13 @@ $this.closest('.et_pb_accordion').removeClass('et_pb_accordion_toggling');
 		<!-- Alumni Council Section -->
 		<section class="alumni-section">
 			<div class="container">
-				<div class="alumni-council-container">
-					<div class="alumni-council-header" onclick="toggleAlumniCouncil()">
+				<!-- Fixed alumni council with proper clickable header -->
+				<div class="alumni-council-container" id="alumniCouncil">
+					<div class="alumni-council-header" onclick="toggleAlumniCouncil(this)">
 						<h3>Alumni Association Student Council 2024-2025</h3>
-						<span class="toggle-icon" id="toggleIcon">▼</span>
+						<span class="toggle-icon">▼</span>
 					</div>
-					<div class="alumni-council-content" id="alumniContent">
+					<div class="alumni-council-content">
 						<table class="council-table">
 							<thead>
 								<tr>
