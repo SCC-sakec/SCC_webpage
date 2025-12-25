@@ -385,11 +385,9 @@ $this.closest('.et_pb_accordion').removeClass('et_pb_accordion_toggling');
         </div>
     </section>
 				
-	
-		<!-- Action Buttons Section - HORIZONTAL LAYOUT -->
+	<!-- Action Buttons Section -->
 		<section class="buttons-section" id="buttons">
 			<div class="container">
-				<!-- Centered button layout with dropdown in middle -->
 				<div class="buttons-wrapper">
 					<a href="https://docs.google.com/forms/d/e/1FAIpQLSemb8Aesh4Czp-Nwi1JKIgEdmETFd7knc7JOq7hFUCg3-XWkQ/viewform" class="action-link">Universal Form</a>
 					<a href="#" class="action-link">Winner Details</a>
@@ -398,154 +396,161 @@ $this.closest('.et_pb_accordion').removeClass('et_pb_accordion_toggling');
 			</div>
 		</section>
 
-					
-					<!-- Alumni Council Dropdown with Table -->
-					<div class="dropdown" id="alumniDropdown">
-						<a href="javascript:void(0)" class="action-link dropdown-trigger" onclick="toggleDropdown()">Alumni Council ▼</a>
-						<div class="dropdown-content">
-							<table class="council-table">
-								<thead>
-									<tr>
-										<th>Sr No</th>
-										<th>Name of Member</th>
-										<th>Designation</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>1</td>
-										<td>Dhruvi Mehta</td>
-										<td>President</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>Tirth Mange</td>
-										<td>Vice President</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>Ritika Mayekar</td>
-										<td>Secretary</td>
-									</tr>
-									<tr>
-										<td>4</td>
-										<td>Siddhi Mahajan</td>
-										<td>Deputy Secretary</td>
-									</tr>
-									<tr>
-										<td>5</td>
-										<td>Nidhi Khot</td>
-										<td>Administration Coordinator</td>
-									</tr>
-									<tr>
-										<td>6</td>
-										<td>Shlok Jha</td>
-										<td>Internship and Training Coordinator</td>
-									</tr>
-									<tr>
-										<td>7</td>
-										<td>Sharvani Saigaonkar</td>
-										<td>Outreach Coordinator</td>
-									</tr>
-									<tr>
-										<td>8</td>
-										<td>Aman Verma</td>
-										<td>Member</td>
-									</tr>
-									<tr>
-										<td>9</td>
-										<td>Priya Sharma</td>
-										<td>Member</td>
-									</tr>
-									<tr>
-										<td>10</td>
-										<td>Rajesh Kumar</td>
-										<td>Member</td>
-									</tr>
-									<tr>
-										<td>11</td>
-										<td>Neha Patel</td>
-										<td>Member</td>
-									</tr>
-									<tr>
-										<td>12</td>
-										<td>Arjun Singh</td>
-										<td>Member</td>
-									</tr>
-									<tr>
-										<td>13</td>
-										<td>Anjali Gupta</td>
-										<td>Member</td>
-									</tr>
-									<tr>
-										<td>14</td>
-										<td>Vikram Desai</td>
-										<td>Member</td>
-									</tr>
-									<tr>
-										<td>15</td>
-										<td>Shreya Nair</td>
-										<td>Member</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-
-					
-		<!-- Academic Year Tables Section -->
-		<section class="academic-section">
+		<!-- Alumni Council Section -->
+		<section class="alumni-section">
 			<div class="container">
-				<!-- Academic Year 2024-25 -->
-				<div class="academic-year-block">
-					<h3 class="academic-year-title">Academic Year 2024-25</h3>
-					<div class="table-wrapper">
-						<table class="data-table">
+				<div class="alumni-council-container">
+					<div class="alumni-council-header" onclick="toggleAlumniCouncil()">
+						<h3>Alumni Association Student Council 2024-2025</h3>
+						<span class="toggle-icon" id="toggleIcon">▼</span>
+					</div>
+					<div class="alumni-council-content" id="alumniContent">
+						<table class="council-table">
 							<thead>
 								<tr>
-									<th>Sr. No</th>
-									<th>Event Name</th>
-									<th>Alumni Speaker</th>
-									<th>Description</th>
-									<th>Number of Participants</th>
-									<th>Event Link</th>
+									<th>Sr No</th>
+									<th>Name of Member</th>
+									<th>Designation</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<td>1</td>
-									<td>SAMPARKA-2024-2025</td>
-									<td>SAKEC Alumni</td>
-									<td>SAKEC Alumni enthusiastically captured moments with former classmates and faculty, preserving memories for years.</td>
-									<td>67</td>
-									<td><a href="#">Click here for more details</a></td>
+									<td>Dhruvi Mehta</td>
+									<td>President</td>
 								</tr>
 								<tr>
 									<td>2</td>
-									<td>CROWDSTAGE 2.0 – A Stage of Entrepreneurs22nd August 2024</td>
-									<td>Mr. Kailash Gajara, Mr. Nirav Panchal and Ms. Shreya Parekh</td>
-									<td>The objective is to enable students to apply current concepts in entrepreneurship to the evaluation of entrepreneurs, their ventures, and the venturing environment so they will develop skills, including the capability to add value in the new venture sector of the economy. Also to help students acquire and practice evaluation skills useful in consulting, advising, and making new venture decisions.</td>
-									<td>195</td>
-									<td><a href="#">Click here for more details</a></td>
+									<td>Tirth Mange</td>
+									<td>Vice President</td>
 								</tr>
 								<tr>
 									<td>3</td>
-									<td>Alumni Talk-2024</td>
-									<td>Mr. Yash Prajapati</td>
-									<td>The Information Technology department, in collaboration with SAKEC-ACM Student Chapter and IIC7.0, conducted an Alumni Talk for Second Year IT students on 14th Oct 2024. Mr. Yash Prajapati, IT Alumni, started his talk with a roadmap on how to develop an interactive user interface. He gave information about the UI/UX field and tools like Figma. He also highlighted the importance of feedback to improve user experience. He gave academic guidance based on his own experience during graduation in SAKEC.</td>
-									<td>-</td>
-									<td><a href="#">Click here for more details</a></td>
+									<td>Ritika Mayekar</td>
+									<td>Secretary</td>
 								</tr>
 								<tr>
 									<td>4</td>
-									<td>Roadmap to Hackathon</td>
-									<td>Mr. Kunal Hirani Mr. Mildeep Singh Pahwa</td>
-									<td>SAKEC, Information Technology department in collaboration with SAKEC-ACM Student Chapter, IIC 6.0 and SAKEC Alumni Association has conducted the event on "Roadmap to Hackathon" on 4th September 2024. Our speaker Mr. Kunal Hirani and Mr. Mildeep Singh Pahwa Our Alumni and Smart India Hackathon (SIH) Winners guided the audience with their experience, how to tackle challenges and Team coordination.</td>
-									<td>-</td>
-									<td><a href="#">Click here for more details</a></td>
+									<td>Siddhi Mahajan</td>
+									<td>Deputy Secretary</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>Nidhi Khot</td>
+									<td>Administration Coordinator</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>Shlok Jha</td>
+									<td>Internship and Training Coordinator</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>Sharvani Saigaonkar</td>
+									<td>Outreach Coordinator</td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>Aman Verma</td>
+									<td>Member</td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td>Priya Sharma</td>
+									<td>Member</td>
+								</tr>
+								<tr>
+									<td>10</td>
+									<td>Rajesh Kumar</td>
+									<td>Member</td>
+								</tr>
+								<tr>
+									<td>11</td>
+									<td>Neha Patel</td>
+									<td>Member</td>
+								</tr>
+								<tr>
+									<td>12</td>
+									<td>Arjun Singh</td>
+									<td>Member</td>
+								</tr>
+								<tr>
+									<td>13</td>
+									<td>Anjali Gupta</td>
+									<td>Member</td>
+								</tr>
+								<tr>
+									<td>14</td>
+									<td>Vikram Desai</td>
+									<td>Member</td>
+								</tr>
+								<tr>
+									<td>15</td>
+									<td>Shreya Nair</td>
+									<td>Member</td>
 								</tr>
 							</tbody>
 						</table>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Academic Year Tables Section -->
+		<section class="academic-section">
+			<div class="container">
+				<!-- Academic Year 2024-25 -->
+				<div class="academic-year-block">
+					<div class="academic-box">
+						<h3 class="academic-year-title">Academic Year 2024-25</h3>
+						<div class="table-wrapper">
+							<table class="data-table">
+								<thead>
+									<tr>
+										<th>Sr. No</th>
+										<th>Event Name</th>
+										<th>Alumni Speaker</th>
+										<th>Description</th>
+										<th>Number of Participants</th>
+										<th>Event Link</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>SAMPARKA-2024-2025</td>
+										<td>SAKEC Alumni</td>
+										<td>SAKEC Alumni enthusiastically captured moments with former classmates and faculty, preserving memories for years.</td>
+										<td>67</td>
+										<td><a href="#">Click here for more details</a></td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>CROWDSTAGE 2.0 – A Stage of Entrepreneurs22nd August 2024</td>
+										<td>Mr. Kailash Gajara, Mr. Nirav Panchal and Ms. Shreya Parekh</td>
+										<td>The objective is to enable students to apply current concepts in entrepreneurship to the evaluation of entrepreneurs, their ventures, and the venturing environment so they will develop skills, including the capability to add value in the new venture sector of the economy. Also to help students acquire and practice evaluation skills useful in consulting, advising, and making new venture decisions.</td>
+										<td>195</td>
+										<td><a href="#">Click here for more details</a></td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>Alumni Talk-2024</td>
+										<td>Mr. Yash Prajapati</td>
+										<td>The Information Technology department, in collaboration with SAKEC-ACM Student Chapter and IIC7.0, conducted an Alumni Talk for Second Year IT students on 14th Oct 2024. Mr. Yash Prajapati, IT Alumni, started his talk with a roadmap on how to develop an interactive user interface. He gave information about the UI/UX field and tools like Figma. He also highlighted the importance of feedback to improve user experience. He gave academic guidance based on his own experience during graduation in SAKEC.</td>
+										<td>-</td>
+										<td><a href="#">Click here for more details</a></td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>Roadmap to Hackathon</td>
+										<td>Mr. Kunal Hirani Mr. Mildeep Singh Pahwa</td>
+										<td>SAKEC, Information Technology department in collaboration with SAKEC-ACM Student Chapter, IIC 6.0 and SAKEC Alumni Association has conducted the event on "Roadmap to Hackathon" on 4th September 2024. Our speaker Mr. Kunal Hirani and Mr. Mildeep Singh Pahwa Our Alumni and Smart India Hackathon (SIH) Winners guided the audience with their experience, how to tackle challenges and Team coordination.</td>
+										<td>-</td>
+										<td><a href="#">Click here for more details</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
