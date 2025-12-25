@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
   startAutoSlide()
 })
 
-function toggleAlumniCouncil() {
-  const container = document.querySelector(".alumni-council-container")
+function toggleAlumniCouncil(element) {
+  const container = element.closest(".alumni-council-container")
   if (container) {
-    container.classList.toggle("active")
+    container.classList.toggle("open")
   }
 }
 
