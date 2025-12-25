@@ -196,8 +196,8 @@ body {
   }
 }
 
-/* ============================================
-   ACTION BUTTONS SECTION - EXACT ALUMNI DESIGN
+* ============================================
+   ACTION BUTTONS SECTION - PLAIN LINKS
    ============================================ */
 
 .buttons-section {
@@ -209,16 +209,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
   flex-wrap: wrap;
 }
 
+/* Plain text links - no styling, just blue text */
 .action-link {
   display: inline-block;
   color: #0056b3;
   text-decoration: none;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 400;
   padding: 0;
   background: none;
   border: none;
@@ -233,38 +234,65 @@ body {
 }
 
 /* ============================================
-   DROPDOWN - CENTERED LIKE ALUMNI PAGE
+   ALUMNI COUNCIL SECTION - EXPANDABLE
    ============================================ */
 
-.dropdown {
-  position: relative;
-  display: inline-block;
+.alumni-section {
+  padding: 40px 0;
+  background-color: #ffffff;
 }
 
-.dropdown-trigger {
-  cursor: pointer;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 1000px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid #d3d3d3;
-  z-index: 1000;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 15px;
-  padding: 20px;
+/* Horizontal expandable bar for alumni council */
+.alumni-council-container {
+  border: 1px solid #0056b3;
   border-radius: 4px;
-  max-height: 500px;
-  overflow-y: auto;
+  overflow: hidden;
+  background-color: #ffffff;
 }
 
-.dropdown.active .dropdown-content {
+.alumni-council-header {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #0056b3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.alumni-council-header:hover {
+  background-color: #f0f0f0;
+}
+
+.alumni-council-header h3 {
+  font-size: 16px;
+  color: #0056b3;
+  margin: 0;
+  font-weight: 600;
+}
+
+.toggle-icon {
+  font-size: 14px;
+  color: #0056b3;
+  transition: transform 0.3s;
+}
+
+.alumni-council-container.active .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.alumni-council-content {
+  display: none;
+  padding: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.alumni-council-container.active .alumni-council-content {
   display: block;
+  max-height: 1000px;
 }
 
 .council-table {
@@ -275,21 +303,21 @@ body {
 }
 
 .council-table thead {
-  background-color: #0056b3;
-  color: white;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
 }
 
 .council-table th {
   padding: 12px;
   text-align: left;
   font-weight: 600;
-  border: 1px solid #0056b3;
-  color: white;
+  border: 1px solid #dee2e6;
+  color: #212529;
 }
 
 .council-table td {
   padding: 12px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #dee2e6;
   color: #212529;
 }
 
@@ -298,10 +326,6 @@ body {
 }
 
 .council-table tbody tr:hover {
-  background-color: #f9f9f9;
-}
-
-.council-table tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
@@ -318,48 +342,59 @@ body {
   margin-bottom: 60px;
 }
 
+/* Blue border box containing both title and table */
+.academic-box {
+  border: 1px solid #0056b3;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
 .academic-year-title {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
-  color: #212529;
-  margin-bottom: 20px;
-  padding: 15px;
+  color: #0056b3;
+  margin: 0;
+  padding: 20px;
   background-color: #f8f9fa;
-  border-left: 4px solid #0056b3;
+  border-bottom: 1px solid #0056b3;
   display: block;
 }
 
 .table-wrapper {
-  border: 1px solid #d3d3d3;
-  border-radius: 4px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
 }
 
+/* Data table - headers NOT blue, just light background */
 .data-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
   background-color: white;
   font-family: "Open Sans", sans-serif;
+  margin: 0;
 }
 
 .data-table thead {
-  background-color: #0056b3;
-  color: white;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
 }
 
 .data-table th {
   padding: 12px 15px;
   text-align: left;
   font-weight: 600;
-  border: 1px solid #0056b3;
-  color: white;
+  border: 1px solid #dee2e6;
+  color: #212529;
+  background-color: #f8f9fa;
 }
 
 .data-table td {
   padding: 12px 15px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #dee2e6;
   color: #212529;
 }
 
@@ -368,10 +403,6 @@ body {
 }
 
 .data-table tbody tr:hover {
-  background-color: #f9f9f9;
-}
-
-.data-table tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
