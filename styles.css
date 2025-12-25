@@ -287,7 +287,145 @@ body {
 .action-btn:nth-child(4):hover {
   background: linear-gradient(135deg, #3de06d 0%, #32ebc9 100%);
 }
+/* ============================================
+   DROPDOWN MENU WITH TABLE
+   ============================================ */
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 900px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  border-radius: 4px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+.table-dropdown {
+  padding: 20px;
+}
+
+.council-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.council-table thead {
+  background-color: #0056b3;
+  color: white;
+}
+
+.council-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #0056b3;
+}
+
+.council-table td {
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+  color: #212529;
+}
+
+.council-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.council-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ============================================
+   ACADEMIC YEAR TABLES SECTION
+   ============================================ */
+
+.academic-section {
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+
+.academic-year-block {
+  margin-bottom: 60px;
+}
+
+.academic-year-heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0056b3;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #0056b3;
+  display: inline-block;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background-color: white;
+}
+
+.data-table thead {
+  background-color: #0056b3;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+.data-table th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #0056b3;
+}
+
+.data-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #dee2e6;
+  color: #495057;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f8f9fa;
+  transition: background-color 0.3s;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.data-table a {
+  color: #0056b3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.data-table a:hover {
+  text-decoration: underline;
+}
 /* ============================================
    DROPDOWN MENU
    ============================================ */
