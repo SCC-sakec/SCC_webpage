@@ -197,7 +197,7 @@ body {
 }
 
 /* ============================================
-   ACTION BUTTONS SECTION - HORIZONTAL LAYOUT
+   ACTION BUTTONS SECTION - EXACT ALUMNI DESIGN
    ============================================ */
 
 .buttons-section {
@@ -205,63 +205,35 @@ body {
   background-color: #ffffff;
 }
 
-.buttons-grid {
+.buttons-wrapper {
   display: flex;
-  flex-direction: row;
-  gap: 30px;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 30px;
   flex-wrap: wrap;
-  max-width: 100%;
-  margin: 0 auto;
 }
 
-/* Removed button styling - now plain text links */
-.action-btn {
+.action-link {
   display: inline-block;
-  padding: 0;
   color: #0056b3;
   text-decoration: none;
-  border: none;
-  border-radius: 0;
   font-size: 15px;
   font-weight: 500;
+  padding: 0;
+  background: none;
+  border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   font-family: inherit;
-  background-color: transparent;
-  box-shadow: none;
-  position: relative;
-  overflow: visible;
-  white-space: nowrap;
 }
 
-.action-btn::before {
-  display: none;
-}
-
-.action-btn:hover {
-  background-color: transparent;
-  box-shadow: none;
-  transform: none;
-  text-decoration: underline;
+.action-link:hover {
   color: #004085;
-}
-
-/* Dropdown Button */
-.dropdown-btn {
-  background-color: transparent;
-  color: #0056b3;
-}
-
-.dropdown-btn:hover {
-  background-color: transparent;
   text-decoration: underline;
-  color: #004085;
 }
 
 /* ============================================
-   DROPDOWN MENU WITH TABLE
+   DROPDOWN - CENTERED LIKE ALUMNI PAGE
    ============================================ */
 
 .dropdown {
@@ -269,18 +241,24 @@ body {
   display: inline-block;
 }
 
+.dropdown-trigger {
+  cursor: pointer;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: white;
-  min-width: 900px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  z-index: 1;
-  border-radius: 4px;
+  min-width: 1000px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d3d3d3;
+  z-index: 1000;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 10px;
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 4px;
   max-height: 500px;
   overflow-y: auto;
 }
@@ -289,14 +267,11 @@ body {
   display: block;
 }
 
-.table-dropdown {
-  padding: 20px;
-}
-
 .council-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .council-table thead {
@@ -308,25 +283,30 @@ body {
   padding: 12px;
   text-align: left;
   font-weight: 600;
-  border-bottom: 2px solid #0056b3;
+  border: 1px solid #0056b3;
+  color: white;
 }
 
 .council-table td {
   padding: 12px;
-  border-bottom: 1px solid #dee2e6;
+  border: 1px solid #e0e0e0;
   color: #212529;
 }
 
-.council-table tbody tr:hover {
-  background-color: #f8f9fa;
+.council-table tbody tr {
+  background-color: white;
 }
 
-.council-table tbody tr:last-child td {
-  border-bottom: none;
+.council-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.council-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
 /* ============================================
-   ACADEMIC YEAR TABLES SECTION
+   ACADEMIC YEAR SECTION
    ============================================ */
 
 .academic-section {
@@ -338,20 +318,22 @@ body {
   margin-bottom: 60px;
 }
 
-.academic-year-heading {
-  font-size: 24px;
-  font-weight: 700;
-  color: #0056b3;
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-  border-bottom: 3px solid #0056b3;
-  display: inline-block;
+.academic-year-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-left: 4px solid #0056b3;
+  display: block;
 }
 
 .table-wrapper {
-  overflow-x: auto;
+  border: 1px solid #d3d3d3;
   border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .data-table {
@@ -359,35 +341,38 @@ body {
   border-collapse: collapse;
   font-size: 14px;
   background-color: white;
+  font-family: "Open Sans", sans-serif;
 }
 
 .data-table thead {
   background-color: #0056b3;
   color: white;
-  position: sticky;
-  top: 0;
 }
 
 .data-table th {
-  padding: 15px;
+  padding: 12px 15px;
   text-align: left;
   font-weight: 600;
-  border-bottom: 2px solid #0056b3;
+  border: 1px solid #0056b3;
+  color: white;
 }
 
 .data-table td {
   padding: 12px 15px;
-  border-bottom: 1px solid #dee2e6;
-  color: #495057;
+  border: 1px solid #e0e0e0;
+  color: #212529;
+}
+
+.data-table tbody tr {
+  background-color: white;
 }
 
 .data-table tbody tr:hover {
-  background-color: #f8f9fa;
-  transition: background-color 0.3s;
+  background-color: #f9f9f9;
 }
 
 .data-table tbody tr:nth-child(even) {
-  background-color: #f8f9fa;
+  background-color: #f9f9f9;
 }
 
 .data-table a {
@@ -399,8 +384,6 @@ body {
 .data-table a:hover {
   text-decoration: underline;
 }
-
-
 /* ============================================
    BACK BUTTON SECTION
    ============================================ */
