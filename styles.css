@@ -196,8 +196,8 @@ body {
   }
 }
 
-* ============================================
-   ACTION BUTTONS SECTION - PLAIN LINKS
+/* ============================================
+   ACTION BUTTONS SECTION - WITH STYLING
    ============================================ */
 
 .buttons-section {
@@ -209,28 +209,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
-/* Plain text links - no styling, just blue text */
-.action-link {
+/* Styled buttons with padding, border, and background */
+.action-btn {
   display: inline-block;
-  color: #0056b3;
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: white;
   text-decoration: none;
   font-size: 15px;
-  font-weight: 400;
-  padding: 0;
-  background: none;
-  border: none;
+  font-weight: 600;
+  border: 1px solid #0056b3;
+  border-radius: 4px;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   font-family: inherit;
 }
 
-.action-link:hover {
-  color: #004085;
-  text-decoration: underline;
+.action-btn:hover {
+  background-color: #004085;
+  border-color: #004085;
 }
 
 /* ============================================
@@ -248,10 +249,11 @@ body {
   border-radius: 4px;
   overflow: hidden;
   background-color: #ffffff;
+  /* Removed .active dependent styling, now uses visibility:hidden for smooth transitions */
 }
 
 .alumni-council-header {
-  padding: 20px;
+  padding: 15px 20px;
   background-color: #f8f9fa;
   border-bottom: 1px solid #0056b3;
   display: flex;
@@ -278,21 +280,22 @@ body {
   transition: transform 0.3s;
 }
 
-.alumni-council-container.active .toggle-icon {
+/* Toggle icon rotation when content is visible */
+.alumni-council-container.open .toggle-icon {
   transform: rotate(180deg);
 }
 
+/* Content visibility and height animation */
 .alumni-council-content {
-  display: none;
-  padding: 20px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
+  border-top: 0px solid transparent;
 }
 
-.alumni-council-container.active .alumni-council-content {
-  display: block;
-  max-height: 1000px;
+.alumni-council-container.open .alumni-council-content {
+  max-height: 1200px;
+  border-top: 1px solid #0056b3;
 }
 
 .council-table {
@@ -300,6 +303,7 @@ body {
   border-collapse: collapse;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
+  background-color: white;
 }
 
 .council-table thead {
