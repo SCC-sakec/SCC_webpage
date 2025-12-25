@@ -1,89 +1,62 @@
 /* ============================================
-   SAKEC Competition Cell - Carousel Script
+   SAKEC Competition Cell - Script
    ============================================ */
 
-let currentSlideIndex = 0;
-const autoSlideInterval = 5000; // 5 seconds
+let currentSlideIndex = 0
+const autoSlideInterval = 5000
 
-// Toggle dropdown on mobile
+// Carousel functionality
 document.addEventListener("DOMContentLoaded", () => {
+  showSlide(currentSlideIndex)
+  startAutoSlide()
+})
 
-    const dropdowns = document.querySelectorAll(".dropdown");
-
-    dropdowns.forEach(drop => {
-        drop.querySelector(".dropdown-btn").addEventListener("click", e => {
-            e.preventDefault();
-
-            // close all others
-            dropdowns.forEach(d => {
-                if (d !== drop) d.classList.remove("active");
-            });
-
-            // toggle current
-            drop.classList.toggle("active");
-        });
-    });
-
-    // click outside closes dropdown
-    document.addEventListener("click", e => {
-        if (!e.target.closest(".dropdown")) {
-            dropdowns.forEach(d => d.classList.remove("active"));
-        }
-    });
-});
-
-
-
-// Initialize carousel
-document.addEventListener("DOMContentLoaded", () => {
-  showSlide(currentSlideIndex);
-  startAutoSlide();
-});
+function toggleAlumniCouncil() {
+  const container = document.querySelector(".alumni-council-container")
+  if (container) {
+    container.classList.toggle("active")
+  }
+}
 
 function changeSlide(n) {
-  showSlide(currentSlideIndex += n);
-  resetAutoSlide();
+  showSlide((currentSlideIndex += n))
+  resetAutoSlide()
 }
 
 function currentSlide(n) {
-  showSlide(currentSlideIndex = n);
-  resetAutoSlide();
+  showSlide((currentSlideIndex = n))
+  resetAutoSlide()
 }
 
 function showSlide(n) {
-  const slides = document.querySelectorAll(".carousel-slide");
-  const dots = document.querySelectorAll(".dot");
+  const slides = document.querySelectorAll(".carousel-slide")
+  const dots = document.querySelectorAll(".dot")
 
-  // Wrap around
   if (n >= slides.length) {
-    currentSlideIndex = 0;
+    currentSlideIndex = 0
   } else if (n < 0) {
-    currentSlideIndex = slides.length - 1;
+    currentSlideIndex = slides.length - 1
   } else {
-    currentSlideIndex = n;
+    currentSlideIndex = n
   }
 
-  // Hide all slides
-  slides.forEach((slide) => slide.classList.remove("active"));
-  dots.forEach((dot) => dot.classList.remove("active"));
+  slides.forEach((slide) => slide.classList.remove("active"))
+  dots.forEach((dot) => dot.classList.remove("active"))
 
-  // Show current slide
-  slides[currentSlideIndex].classList.add("active");
-  dots[currentSlideIndex].classList.add("active");
+  slides[currentSlideIndex].classList.add("active")
+  dots[currentSlideIndex].classList.add("active")
 }
 
-let autoSlideTimer;
+let autoSlideTimer
 
 function startAutoSlide() {
   autoSlideTimer = setInterval(() => {
-    currentSlideIndex++;
-    showSlide(currentSlideIndex);
-  }, autoSlideInterval);
+    currentSlideIndex++
+    showSlide(currentSlideIndex)
+  }, autoSlideInterval)
 }
 
 function resetAutoSlide() {
-  clearInterval(autoSlideTimer);
-  startAutoSlide();
+  clearInterval(autoSlideTimer)
+  startAutoSlide()
 }
-
-// Dropdown functionality (handled above)
