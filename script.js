@@ -1,68 +1,89 @@
 /* ============================================
-   SAKEC Competition Cell - Script
+   SAKEC Competition Cell - Carousel Script
    ============================================ */
 
-let currentSlideIndex = 0
-const autoSlideInterval = 5000
+let currentSlideIndex = 0;
+const autoSlideInterval = 5000; // 5 seconds
 
-// Carousel functionality
+// Toggle dropdown on mobile
 document.addEventListener("DOMContentLoaded", () => {
-  showSlide(currentSlideIndex)
-  startAutoSlide()
-})
 
-function toggleDropdown() {
-  const dropdown = document.getElementById("alumniDropdown")
-  dropdown.classList.toggle("active")
-}
+    const dropdowns = document.querySelectorAll(".dropdown");
 
-document.addEventListener("click", (e) => {
-  const dropdown = document.getElementById("alumniDropdown")
-  if (dropdown && !e.target.closest(".dropdown")) {
-    dropdown.classList.remove("active")
-  }
-})
+    dropdowns.forEach(drop => {
+        drop.querySelector(".dropdown-btn").addEventListener("click", e => {
+            e.preventDefault();
+
+            // close all others
+            dropdowns.forEach(d => {
+                if (d !== drop) d.classList.remove("active");
+            });
+
+            // toggle current
+            drop.classList.toggle("active");
+        });
+    });
+
+    // click outside closes dropdown
+    document.addEventListener("click", e => {
+        if (!e.target.closest(".dropdown")) {
+            dropdowns.forEach(d => d.classList.remove("active"));
+        }
+    });
+});
+
+
+
+// Initialize carousel
+document.addEventListener("DOMContentLoaded", () => {
+  showSlide(currentSlideIndex);
+  startAutoSlide();
+});
 
 function changeSlide(n) {
-  showSlide((currentSlideIndex += n))
-  resetAutoSlide()
+  showSlide(currentSlideIndex += n);
+  resetAutoSlide();
 }
 
 function currentSlide(n) {
-  showSlide((currentSlideIndex = n))
-  resetAutoSlide()
+  showSlide(currentSlideIndex = n);
+  resetAutoSlide();
 }
 
 function showSlide(n) {
-  const slides = document.querySelectorAll(".carousel-slide")
-  const dots = document.querySelectorAll(".dot")
+  const slides = document.querySelectorAll(".carousel-slide");
+  const dots = document.querySelectorAll(".dot");
 
+  // Wrap around
   if (n >= slides.length) {
-    currentSlideIndex = 0
+    currentSlideIndex = 0;
   } else if (n < 0) {
-    currentSlideIndex = slides.length - 1
+    currentSlideIndex = slides.length - 1;
   } else {
-    currentSlideIndex = n
+    currentSlideIndex = n;
   }
 
-  slides.forEach((slide) => slide.classList.remove("active"))
-  dots.forEach((dot) => dot.classList.remove("active"))
+  // Hide all slides
+  slides.forEach((slide) => slide.classList.remove("active"));
+  dots.forEach((dot) => dot.classList.remove("active"));
 
-  slides[currentSlideIndex].classList.add("active")
-  dots[currentSlideIndex].classList.add("active")
+  // Show current slide
+  slides[currentSlideIndex].classList.add("active");
+  dots[currentSlideIndex].classList.add("active");
 }
 
-let autoSlideTimer
+let autoSlideTimer;
 
 function startAutoSlide() {
   autoSlideTimer = setInterval(() => {
-    currentSlideIndex++
-    showSlide(currentSlideIndex)
-  }, autoSlideInterval)
+    currentSlideIndex++;
+    showSlide(currentSlideIndex);
+  }, autoSlideInterval);
 }
 
 function resetAutoSlide() {
-  clearInterval(autoSlideTimer)
-  startAutoSlide()
+  clearInterval(autoSlideTimer);
+  startAutoSlide();
 }
 
+// Dropdown functionality (handled above)
