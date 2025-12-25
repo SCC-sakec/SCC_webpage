@@ -5,16 +5,27 @@
 let currentSlideIndex = 0
 const autoSlideInterval = 5000
 
-// Carousel functionality
 document.addEventListener("DOMContentLoaded", () => {
   showSlide(currentSlideIndex)
   startAutoSlide()
+
+  // Setup council click handler
+  const alumniHeader = document.querySelector(".alumni-council-header")
+  if (alumniHeader) {
+    alumniHeader.addEventListener("click", function () {
+      const container = this.closest(".alumni-council-container")
+      if (container) {
+        container.classList.toggle("open")
+      }
+    })
+  }
 })
 
 function toggleAlumniCouncil(element) {
   const container = element.closest(".alumni-council-container")
   if (container) {
     container.classList.toggle("open")
+    console.log("[v0] Alumni council toggled, open state:", container.classList.contains("open"))
   }
 }
 
