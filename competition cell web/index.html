@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SAKEC Competition Cell - SAKEC</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;family=Montserrat:wght@400;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style type="text/tailwindcss">
+        @layer base {
+            :root {
+                --primary: #2362ae;
+                --secondary: #d06322;
+                --background-light: #f8fafc;
+                --background-dark: #0f172a;
+                --surface-light: #ffffff;
+                --surface-dark: #1e293b;
+                --text-light: #334155;
+                --text-dark: #e2e8f0;
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+    <style>
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Carousel Styles */
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2362ae",
+                        secondary: "#d06322",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                        "footer-bg": "#2362ae",
+                        "text-light": "#334155",
+                        "text-dark": "#e2e8f0",
+                    },
+                    fontFamily: {
+                        display: ["Montserrat", "sans-serif"],
+                        body: ["Roboto", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.375rem",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body transition-colors duration-200 text-sm md:text-base">
+    <div
+        class="bg-primary text-white text-[11px] py-1.5 px-4 hidden md:flex justify-between items-center border-b border-white/20">
+        <div class="flex space-x-4">
+            <span class="flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">call</span>
+                022-25580854</span>
+            <span class="flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">mail</span>
+                info@sakec.ac.in</span>
+        </div>
+        <div class="flex space-x-4 uppercase font-bold tracking-wide">
+            <a class="hover:text-secondary transition-colors" href="#">Competition Cell</a>
+            <a class="hover:text-secondary transition-colors" href="#">Notices</a>
+            <a class="hover:text-secondary transition-colors" href="#">Accreditation</a>
+            <a class="hover:text-secondary transition-colors" href="#">Placement</a>
+            <a class="hover:text-secondary transition-colors" href="#">ZEENAM</a>
+            <a class="hover:text-secondary transition-colors" href="#">Payment</a>
+            <a class="hover:text-secondary transition-colors" href="#">ERP Login</a>
+        </div>
+    </div>
+    <header class="bg-surface-light dark:bg-surface-dark shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-2 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <div class="w-16 h-16 mr-3">
+                    <img alt="SAKEC Logo" class="w-full h-full object-contain"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPD-QWAf8cMF5K3pXijn3ltLSeKjeXBx4AvdnPyJYp2fxSOKz8CiX8CYzAWqDj7wdNhYGfndGY_2Bge19D5pLnuiTKxs_bAa032vYvfhecNSIXUXHQMNJbHRR-f9vwIendRl7KhpiBqbOmkJXmEbveKwA-coFgqpwlFpDhcSdLO6v4p1R0ih1dpX_TfO3ZrzjGBwO_R64XhvJRvvbiftk1l0tKPnNbn6u7-wGO3eN8C8qLK77ahNB_tEzXcz2GWG7--QEjEQiv4Iw" />
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold font-display text-primary uppercase leading-tight">Shah
+                        &amp; Anchor<br />Kutchhi Engineering College</h1>
+                    <p class="text-[10px] md:text-xs text-gray-500 dark:text-gray-400 font-medium tracking-wide">Mahavir
+                        Education Trust's | Affiliated to University of Mumbai</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6 font-semibold text-sm uppercase text-gray-700">
+                <a class="hover:text-primary dark:text-gray-200 dark:hover:text-primary transition-colors"
+                    href="#">Home</a>
+                <div class="relative group">
+                    <button
+                        class="flex items-center hover:text-primary dark:text-gray-200 dark:hover:text-primary transition-colors">
+                        About <span class="material-symbols-outlined text-[18px] ml-1">expand_more</span>
+                    </button>
+                </div>
+                <div class="relative group">
+                    <button
+                        class="flex items-center hover:text-primary dark:text-gray-200 dark:hover:text-primary transition-colors">
+                        Admissions <span class="material-symbols-outlined text-[18px] ml-1">expand_more</span>
+                    </button>
+                </div>
+                <div class="relative group">
+                    <button
+                        class="flex items-center hover:text-primary dark:text-gray-200 dark:hover:text-primary transition-colors">
+                        Academics <span class="material-symbols-outlined text-[18px] ml-1">expand_more</span>
+                    </button>
+                </div>
+                <a class="hover:text-primary dark:text-gray-200 dark:hover:text-primary transition-colors"
+                    href="#">Students</a>
+                <a class="hover:text-primary dark:text-gray-200 dark:hover:text-primary transition-colors"
+                    href="#">Contact</a>
+                <button class="text-primary hover:text-secondary transition-colors">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <button class="ml-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    onclick="document.documentElement.classList.toggle('dark')">
+                    <span class="material-symbols-outlined text-gray-600 dark:text-gray-300">brightness_4</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div class="bg-secondary text-white text-center py-1 text-xs font-bold uppercase tracking-wider px-4 shadow-inner">
+        SAKEC is an Autonomous Institute Affiliated to University of Mumbai
+    </div>
+    <div class="bg-primary py-12 md:py-16 relative overflow-hidden reveal">
+        <div class="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-2xl md:text-4xl font-bold text-white font-display">SAKEC Competition Cell</h2>
+            <nav class="text-white/80 text-sm mt-3 flex items-center font-medium">
+                <a class="hover:text-white transition-colors" href="#">Home</a>
+                <span class="mx-2">/</span>
+                <span class="text-white">Clubs</span>
+                <span class="mx-2">/</span>
+                <span class="text-secondary font-bold">Competition Cell</span>
+            </nav>
+        </div>
+    </div>
+    <main class="container mx-auto px-4 py-8 md:py-16 space-y-20">
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start reveal">
+            <div class="md:col-span-4 flex justify-center md:justify-start">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-primary to-blue-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200">
+                    </div>
+                    <div
+                        class="relative bg-white p-2 rounded-full border border-gray-100 dark:border-gray-700 dark:bg-surface-dark">
+                        <img alt="SAKEC Competition Cell Logo"
+                            class="w-48 h-48 object-cover rounded-full border-4 border-white shadow-inner"
+                            src="assets/cc_logo.jpg" />
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-8 space-y-4">
+                <div>
+                    <h3 class="text-xl font-bold text-primary font-display mb-3 border-l-4 border-primary pl-4 py-1">
+                        About</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm text-justify">
+                        The <strong>SAKEC Competition Cell</strong> is dedicated to keeping students informed and ready
+                        for
+                        opportunities beyond the campus. Our primary mission is to create awareness about prestigious
+                        national and international competitions, hackathons, and challenges happening around the globe.
+                        While we do conduct our own events, our core focus is bridging the gap between students and
+                        external opportunities, ensuring every student knows where to showcase their talent. We curate
+                        lists of upcoming contests, provide guidance on how to participate, and offer the support
+                        needed to excel on these global platforms.
+                    </p>
+                </div>
+                <div
+                    class="bg-primary/5 dark:bg-surface-dark p-6 rounded-xl border border-primary/20 dark:border-gray-700 shadow-sm">
+                    <h3 class="text-lg font-bold text-gray-800 dark:text-white font-display mb-4">Objectives</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <span
+                                class="material-symbols-outlined text-primary mr-2 mt-0.5 text-[12px] leading-none">circle</span>
+                            <span class="text-gray-700 dark:text-gray-300"><strong>Foster Competitiveness:</strong> To
+                                instill a healthy spirit of competition and innovation among students.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span
+                                class="material-symbols-outlined text-primary mr-2 mt-0.5 text-[12px] leading-none">circle</span>
+                            <span class="text-gray-700 dark:text-gray-300"><strong>Skill Development:</strong> To
+                                provide technical training and mentorship.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span
+                                class="material-symbols-outlined text-primary mr-2 mt-0.5 text-[12px] leading-none">circle</span>
+                            <span class="text-gray-700 dark:text-gray-300"><strong>Encourage Participation:</strong> To
+                                facilitate student participation in hackathons and contests.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span
+                                class="material-symbols-outlined text-primary mr-2 mt-0.5 text-[12px] leading-none">circle</span>
+                            <span class="text-gray-700 dark:text-gray-300"><strong>Celebrate Innovation:</strong> To
+                                recognize and showcase groundbreaking projects.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Carousel Section -->
+        <section class="reveal space-y-8 bg-surface-light dark:bg-surface-dark py-12">
+            <div class="text-center px-4">
+                <h3 class="text-3xl font-bold text-primary font-display mb-2">Life at @Competition Cell</h3>
+                <p class="text-gray-600 dark:text-gray-400">Glimpses of our vibrant community and events</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto px-4">
+                <div class="text-left space-y-6">
+                    <h3 class="text-4xl font-bold text-primary font-display leading-tight">Empowering <br /><span
+                            class="text-secondary">Student Innovators</span></h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                        From hands-on workshops to expert-led seminars, we provide the platform you need to grow.
+                        Witness the buzz of creativity and the spirit of competition that defines our community.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#"
+                            class="inline-flex items-center bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition shadow-lg hover:-translate-y-1">
+                            Gallery <span class="material-symbols-outlined text-sm ml-2">arrow_forward</span>
+                        </a>
+                        <a href="#"
+                            class="inline-flex items-center text-primary font-bold py-3 px-6 rounded-lg border-2 border-primary hover:bg-primary hover:text-white transition group">
+                            Events <span
+                                class="material-symbols-outlined text-sm ml-2 group-hover:translate-x-1 transition-transform">event</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative group max-w-sm mx-auto w-full">
+                    <!-- Carousel Wrapper -->
+                    <div
+                        class="overflow-hidden rounded-2xl shadow-2xl aspect-[3/4] border-4 border-white dark:border-gray-700 bg-gray-100 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <div class="carousel-track h-full" id="carouselTrack">
+                            <!-- Slide 1 -->
+                            <div class="carousel-slide relative">
+                                <img src="assets/c1.jpg" alt="Event Image 1" class="w-full h-full object-cover">
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="carousel-slide relative">
+                                <img src="assets/c2.jpg" alt="Event Image 2" class="w-full h-full object-cover">
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="carousel-slide relative">
+                                <img src="assets/c3.jpg" alt="Event Image 3" class="w-full h-full object-cover">
+                            </div>
+                            <!-- Slide 4 -->
+                            <div class="carousel-slide relative">
+                                <img src="assets/c4.png" alt="Event Image 4" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nav Buttons -->
+                    <button id="prevBtn"
+                        class="absolute -left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-50 text-primary p-3 rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0 border border-gray-100">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button id="nextBtn"
+                        class="absolute -right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-50 text-primary p-3 rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0 border border-gray-100">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+
+                    <!-- Indicators -->
+                    <div class="absolute -bottom-8 left-0 right-0 flex justify-center space-x-2" id="carouselDots">
+                        <!-- Dots will be inserted by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-8 reveal">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white font-display border-l-4 border-secondary pl-4">
+                Academic Year 2025-26 Activities</h3>
+            <div
+                class="overflow-hidden rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-surface-dark">
+                <div class="overflow-x-auto custom-scrollbar">
+                    <table class="w-full text-sm text-left">
+                        <thead class="text-xs text-white uppercase bg-primary">
+                            <tr>
+                                <th class="px-6 py-4 font-bold tracking-wider border-r border-white/20" scope="col">Sr.
+                                    No</th>
+                                <th class="px-6 py-4 font-bold tracking-wider border-r border-white/20" scope="col">
+                                    Event Name</th>
+                                <th class="px-6 py-4 font-bold tracking-wider border-r border-white/20" scope="col">
+                                    Speaker/Mentor</th>
+                                <th class="px-6 py-4 font-bold tracking-wider border-r border-white/20" scope="col">
+                                    Description</th>
+                                <th class="px-6 py-4 font-bold tracking-wider border-r border-white/20 text-center"
+                                    scope="col">Participants</th>
+                                <th class="px-6 py-4 font-bold tracking-wider text-center" scope="col">Link</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
+                            <tr class="hover:bg-primary/5 dark:hover:bg-gray-800 transition">
+                                <td
+                                    class="px-6 py-4 font-medium text-gray-900 dark:text-white border-r border-gray-100 dark:border-gray-700">
+                                    1</td>
+                                <td
+                                    class="px-6 py-4 font-bold text-primary dark:text-blue-400 border-r border-gray-100 dark:border-gray-700">
+                                    Hackathon Kickoff 2024</td>
+                                <td
+                                    class="px-6 py-4 text-gray-600 dark:text-gray-300 border-r border-gray-100 dark:border-gray-700">
+                                    Industry Experts</td>
+                                <td
+                                    class="px-6 py-4 text-gray-500 dark:text-gray-400 border-r border-gray-100 dark:border-gray-700">
+                                    Introductory session guiding students on team formation.</td>
+                                <td
+                                    class="px-6 py-4 text-center font-bold text-gray-700 dark:text-gray-300 border-r border-gray-100 dark:border-gray-700">
+                                    120</td>
+                                <td class="px-6 py-4 text-center">
+                                    <a class="text-secondary hover:text-white border border-secondary hover:bg-secondary font-semibold text-xs px-3 py-1 rounded transition-all uppercase"
+                                        href="#">Details</a>
+                                </td>
+                            </tr>
+                            <tr
+                                class="bg-gray-50 dark:bg-gray-800/30 hover:bg-primary/5 dark:hover:bg-gray-800 transition">
+                                <td
+                                    class="px-6 py-4 font-medium text-gray-900 dark:text-white border-r border-gray-100 dark:border-gray-700">
+                                    2</td>
+                                <td
+                                    class="px-6 py-4 font-bold text-primary dark:text-blue-400 border-r border-gray-100 dark:border-gray-700">
+                                    Innovators Pitch 2.0</td>
+                                <td
+                                    class="px-6 py-4 text-gray-600 dark:text-gray-300 border-r border-gray-100 dark:border-gray-700">
+                                    Mr. Kailash Gajara</td>
+                                <td
+                                    class="px-6 py-4 text-gray-500 dark:text-gray-400 border-r border-gray-100 dark:border-gray-700">
+                                    Evaluation of competitive ideas and entrepreneurship concepts.</td>
+                                <td
+                                    class="px-6 py-4 text-center font-bold text-gray-700 dark:text-gray-300 border-r border-gray-100 dark:border-gray-700">
+                                    195</td>
+                                <td class="px-6 py-4 text-center">
+                                    <a class="text-secondary hover:text-white border border-secondary hover:bg-secondary font-semibold text-xs px-3 py-1 rounded transition-all uppercase"
+                                        href="#">Details</a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-primary/5 dark:hover:bg-gray-800 transition">
+                                <td
+                                    class="px-6 py-4 font-medium text-gray-900 dark:text-white border-r border-gray-100 dark:border-gray-700">
+                                    3</td>
+                                <td
+                                    class="px-6 py-4 font-bold text-primary dark:text-blue-400 border-r border-gray-100 dark:border-gray-700">
+                                    Expert Talk on AI</td>
+                                <td
+                                    class="px-6 py-4 text-gray-600 dark:text-gray-300 border-r border-gray-100 dark:border-gray-700">
+                                    Mr. Yash Prajapati</td>
+                                <td
+                                    class="px-6 py-4 text-gray-500 dark:text-gray-400 border-r border-gray-100 dark:border-gray-700">
+                                    Expert Talk for students participating in AI/ML hackathons.</td>
+                                <td
+                                    class="px-6 py-4 text-center font-bold text-gray-700 dark:text-gray-300 border-r border-gray-100 dark:border-gray-700">
+                                    85</td>
+                                <td class="px-6 py-4 text-center">
+                                    <a class="text-secondary hover:text-white border border-secondary hover:bg-secondary font-semibold text-xs px-3 py-1 rounded transition-all uppercase"
+                                        href="#">Details</a>
+                                </td>
+                            </tr>
+                            <tr
+                                class="bg-gray-50 dark:bg-gray-800/30 hover:bg-primary/5 dark:hover:bg-gray-800 transition">
+                                <td
+                                    class="px-6 py-4 font-medium text-gray-900 dark:text-white border-r border-gray-100 dark:border-gray-700">
+                                    4</td>
+                                <td
+                                    class="px-6 py-4 font-bold text-primary dark:text-blue-400 border-r border-gray-100 dark:border-gray-700">
+                                    Roadmap to Hackathon</td>
+                                <td
+                                    class="px-6 py-4 text-gray-600 dark:text-gray-300 border-r border-gray-100 dark:border-gray-700">
+                                    Mr. Kunal Hirani</td>
+                                <td
+                                    class="px-6 py-4 text-gray-500 dark:text-gray-400 border-r border-gray-100 dark:border-gray-700">
+                                    Collaboration with ACM Student Chapter on "Roadmap to Hackathon".</td>
+                                <td
+                                    class="px-6 py-4 text-center font-bold text-gray-700 dark:text-gray-300 border-r border-gray-100 dark:border-gray-700">
+                                    150</td>
+                                <td class="px-6 py-4 text-center">
+                                    <a class="text-secondary hover:text-white border border-secondary hover:bg-secondary font-semibold text-xs px-3 py-1 rounded transition-all uppercase"
+                                        href="#">Details</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Access Forms Section -->
+        <section class="max-w-4xl mx-auto space-y-6 reveal">
+            <div
+                class="relative bg-white dark:bg-surface-dark p-8 rounded-2xl border-2 border-primary/20 shadow-xl text-center overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-primary"></div>
+                <div class="absolute -right-10 -top-10 w-32 h-32 bg-secondary/10 rounded-full blur-3xl"></div>
+                <div class="absolute -left-10 -bottom-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+
+                <h3
+                    class="text-2xl font-bold text-primary dark:text-white font-display mb-2 flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-secondary animate-pulse">new_releases</span>
+                    Participant & Winner Actions
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mb-8 max-w-2xl mx-auto">
+                    Stay updated! Use these links to register for verified competitions, submit your winning
+                    achievements, and download the full list of opportunities.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSemb8Aesh4Czp-Nwi1JKIgEdmETFd7knc7JOq7hFUCg3-XWkQ/viewform"
+                        class="group relative flex flex-col items-center justify-center bg-white dark:bg-surface-dark hover:bg-primary hover:text-white p-6 rounded-xl shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                        <span
+                            class="material-symbols-outlined text-4xl text-secondary mb-3 group-hover:text-white transition-colors">assignment</span>
+                        <span class="font-bold text-sm tracking-wide uppercase">Universal Form</span>
+                    </a>
+
+                    <a href="https://docs.google.com/document/d/1_M07GRA_1L_d7WVCNGNXWV7GZ38LqXDa/edit?usp=drive_link&ouid=117728285952602987061&rtpof=true&sd=true"
+                        class="group relative flex flex-col items-center justify-center bg-white dark:bg-surface-dark hover:bg-secondary hover:text-white p-6 rounded-xl shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                        <span
+                            class="material-symbols-outlined text-4xl text-primary mb-3 group-hover:text-white transition-colors">emoji_events</span>
+                        <span class="font-bold text-sm tracking-wide uppercase">Winners Detail</span>
+                    </a>
+
+                    <a href="https://docs.google.com/document/d/1tiUpA-rlIS-xTN_vUavQo4bKXRMCOKg38YnVa5-ee5M/edit?tab=t.0"
+                        class="group relative flex flex-col items-center justify-center bg-white dark:bg-surface-dark hover:bg-primary hover:text-white p-6 rounded-xl shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                        <span
+                            class="material-symbols-outlined text-4xl text-secondary mb-3 group-hover:text-white transition-colors">list_alt</span>
+                        <span class="font-bold text-sm tracking-wide uppercase">List of Competitions</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto space-y-6 reveal">
+            <h3 class="text-2xl font-bold text-center text-primary font-display">Student Council Committee</h3>
+            <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-sm">
+                <button
+                    class="w-full flex justify-between items-center bg-primary text-white p-4 text-left font-bold transition hover:bg-blue-700"
+                    onclick="toggleCouncil('council2025')">
+                    <span>Competition Cell Student Council 2025-2026</span>
+                    <span id="icon-council2025"
+                        class="material-symbols-outlined bg-white/20 rounded-full p-1 text-sm transition-transform duration-500">expand_more</span>
+                </button>
+                <div id="council2025"
+                    class="bg-white dark:bg-surface-dark overflow-hidden transition-all duration-1000 ease-in-out max-h-0">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left">
+                            <thead
+                                class="bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-200 uppercase text-xs">
+                                <tr>
+                                    <th class="px-6 py-3 font-bold w-24">Sr No</th>
+                                    <th class="px-6 py-3 font-bold">Name of Member</th>
+                                    <th class="px-6 py-3 font-bold">Designation</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                    <td class="px-6 py-3 dark:text-gray-300">1</td>
+                                    <td class="px-6 py-3 font-medium text-gray-900 dark:text-white">Utkarsh Shukla</td>
+                                    <td class="px-6 py-3 text-secondary font-bold">President</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                    <td class="px-6 py-3 dark:text-gray-300">2</td>
+                                    <td class="px-6 py-3 font-medium text-gray-900 dark:text-white">Yash Tripathi</td>
+                                    <td class="px-6 py-3 text-primary font-medium">Vice President</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                    <td class="px-6 py-3 dark:text-gray-300">3</td>
+                                    <td class="px-6 py-3 font-medium text-gray-900 dark:text-white">Sairaj Kadam</td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-400">Secretary</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                    <td class="px-6 py-3 dark:text-gray-300">4</td>
+                                    <td class="px-6 py-3 font-medium text-gray-900 dark:text-white">Saniya Shetve</td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-400">Deputy Secretary</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                    <td class="px-6 py-3 dark:text-gray-300">5</td>
+                                    <td class="px-6 py-3 font-medium text-gray-900 dark:text-white">Aditi Jena</td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-400">Technical Head</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                    <td class="px-6 py-3 dark:text-gray-300">6</td>
+                                    <td class="px-6 py-3 font-medium text-gray-900 dark:text-white">Sumedha Gajbhiye
+                                    </td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-400">Technical Co-Head</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                    <td class="px-6 py-3 dark:text-gray-300">7</td>
+                                    <td class="px-6 py-3 font-medium text-gray-900 dark:text-white">Dhrumi Karia</td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-400">Social Media Head</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                    <td class="px-6 py-3 dark:text-gray-300">8</td>
+                                    <td class="px-6 py-3 font-medium text-gray-900 dark:text-white">Dhruv Chawda</td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-400">Social Media Co-Head</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                    <td class="px-6 py-3 dark:text-gray-300">9</td>
+                                    <td class="px-6 py-3 font-medium text-gray-900 dark:text-white">Rishabh Jain</td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-400">Social Media Co-Head</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                    <td class="px-6 py-3 dark:text-gray-300">10</td>
+                                    <td class="px-6 py-3 font-medium text-gray-900 dark:text-white">Shashwat Upadhyay
+                                    </td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-400">Documentation Head</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                    <td class="px-6 py-3 dark:text-gray-300">11</td>
+                                    <td class="px-6 py-3 font-medium text-gray-900 dark:text-white">Nupoor Mahajan</td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-400">Documentation Co-Head</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                    <td class="px-6 py-3 dark:text-gray-300">12</td>
+                                    <td class="px-6 py-3 font-medium text-gray-900 dark:text-white">Ranjit Patra</td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-400">GFX Head</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                    <td class="px-6 py-3 dark:text-gray-300">13</td>
+                                    <td class="px-6 py-3 font-medium text-gray-900 dark:text-white">Vedant Shah</td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-400">GFX Co-Head</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                    <td class="px-6 py-3 dark:text-gray-300">14</td>
+                                    <td class="px-6 py-3 font-medium text-gray-900 dark:text-white">Shreeya Dhanmeher
+                                    </td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-400">Outreach Head</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                                    <td class="px-6 py-3 dark:text-gray-300">15</td>
+                                    <td class="px-6 py-3 font-medium text-gray-900 dark:text-white">Satvik Shingote</td>
+                                    <td class="px-6 py-3 text-gray-600 dark:text-gray-400">Outreach Co-Head</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="text-center space-y-8 reveal">
+            <h3 class="text-3xl font-bold text-primary font-display">Our Team</h3>
+            <div
+                class="relative group rounded-2xl overflow-hidden shadow-xl border-4 border-white dark:border-surface-dark max-w-6xl mx-auto aspect-video">
+                <img alt="Student Council Team Photo"
+                    class="w-full h-full object-cover transform transition duration-1000 group-hover:scale-105"
+                    src="assets/ssc_team.jpeg" />
+                <div
+                    class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/90 to-transparent p-8 translate-y-2 group-hover:translate-y-0 transition-transform">
+                    <p class="text-white text-xl font-bold drop-shadow-md">SAKEC Competition Cell Student Council
+                        2025-26</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-footer-bg text-gray-300 py-12 mt-12 border-t-4 border-secondary">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="space-y-4">
+                <h4 class="text-white font-bold text-lg uppercase mb-2 tracking-wider">Contact Us</h4>
+                <p class="text-sm flex items-start text-white/90"><span
+                        class="material-symbols-outlined text-secondary text-[18px] mr-2 mt-0.5">location_on</span>
+                    Mahavir Education Trust Chowk, W. T. Patil Marg, Next to Dukes Company, Chembur, Mumbai - 400 088.
+                </p>
+                <p class="text-sm flex items-center text-white/90"><span
+                        class="material-symbols-outlined text-secondary text-[18px] mr-2">phone</span> 022-25580854</p>
+                <p class="text-sm flex items-center text-white/90"><span
+                        class="material-symbols-outlined text-secondary text-[18px] mr-2">email</span> info@sakec.ac.in
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-lg uppercase mb-4 tracking-wider">Quick Links</h4>
+                <ul class="space-y-2 text-sm text-white/70">
+                    <li><a class="hover:text-secondary transition flex items-center" href="#"><span
+                                class="material-symbols-outlined text-[12px] mr-2">arrow_forward_ios</span>About Us</a>
+                    </li>
+                    <li><a class="hover:text-secondary transition flex items-center" href="#"><span
+                                class="material-symbols-outlined text-[12px] mr-2">arrow_forward_ios</span>Admissions</a>
+                    </li>
+                    <li><a class="hover:text-secondary transition flex items-center" href="#"><span
+                                class="material-symbols-outlined text-[12px] mr-2">arrow_forward_ios</span>Departments</a>
+                    </li>
+                    <li><a class="hover:text-secondary transition flex items-center" href="#"><span
+                                class="material-symbols-outlined text-[12px] mr-2">arrow_forward_ios</span>Placements</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-lg uppercase mb-4 tracking-wider">External Links</h4>
+                <ul class="space-y-2 text-sm text-white/70">
+                    <li><a class="hover:text-secondary transition flex items-center" href="#"><span
+                                class="material-symbols-outlined text-[12px] mr-2">arrow_forward_ios</span>Mumbai
+                            University</a></li>
+                    <li><a class="hover:text-secondary transition flex items-center" href="#"><span
+                                class="material-symbols-outlined text-[12px] mr-2">arrow_forward_ios</span>DTE
+                            Maharashtra</a></li>
+                    <li><a class="hover:text-secondary transition flex items-center" href="#"><span
+                                class="material-symbols-outlined text-[12px] mr-2">arrow_forward_ios</span>AICTE</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-lg uppercase mb-4 tracking-wider">Connect With Us</h4>
+                <div class="flex space-x-3">
+                    <a class="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-secondary transition text-white"
+                        href="#">
+                        <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path clip-rule="evenodd"
+                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a class="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-secondary transition text-white"
+                        href="#">
+                        <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-secondary transition text-white"
+                        href="#">
+                        <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path clip-rule="evenodd"
+                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.468 2.373c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 border-t border-white/20 mt-8 pt-8 text-center text-sm text-white/60">
+            <p>© 2024 Shah &amp; Anchor Kutchhi Engineering College. All rights reserved.</p>
+        </div>
+    </footer>
+    <div
+        class="fixed right-0 top-1/2 -translate-y-1/2 bg-secondary text-white py-4 px-1 rounded-l-md shadow-2xl z-50 cursor-pointer hover:bg-[#b0521b] transition duration-300">
+        <span class="block transform -rotate-90 whitespace-nowrap text-sm font-bold tracking-wider"
+            style="margin: 0 -1.5rem;">Enquire Now</span>
+    </div>
+    <div
+        class="fixed right-0 top-[60%] -translate-y-1/2 bg-secondary text-white py-4 px-1 rounded-l-md shadow-2xl z-50 cursor-pointer hover:bg-[#b0521b] transition duration-300 mt-20">
+        <span class="block transform -rotate-90 whitespace-nowrap text-sm font-bold tracking-wider"
+            style="margin: 0 -2rem;">Admission 2025-26</span>
+    </div>
+
+    <script>
+        // Toggle Council Dropdown with Slow Motion
+        function toggleCouncil(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+
+            if (content.style.maxHeight) {
+                // Closing
+                content.style.maxHeight = null;
+                icon.style.transform = 'rotate(0deg)'; // Back to default (expand_more)
+            } else {
+                // Opening
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.style.transform = 'rotate(180deg)'; // Rotate to indicate open (expand_less state)
+            }
+        }
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+
+        // Image Carousel Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('carouselTrack');
+            const slides = Array.from(track.children);
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            const dotsNav = document.getElementById('carouselDots');
+
+            let currentIndex = 0;
+
+            // Create dots
+            slides.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.classList.add('w-2', 'h-2', 'rounded-full', 'transition-all', 'duration-300', index === 0 ? 'bg-primary' : 'bg-gray-300', index === 0 ? 'w-6' : 'w-2');
+                if (index === 0) dot.classList.add('bg-primary', 'w-6');
+                else dot.classList.add('bg-gray-300', 'dark:bg-gray-600');
+
+                dot.addEventListener('click', () => {
+                    moveToSlide(index);
+                });
+                dotsNav.appendChild(dot);
+            });
+
+            const dots = Array.from(dotsNav.children);
+
+            const updateDots = (index) => {
+                dots.forEach(dot => {
+                    dot.classList.remove('bg-primary', 'w-6');
+                    dot.classList.add('bg-gray-300', 'dark:bg-gray-600', 'w-2');
+                });
+                dots[index].classList.remove('bg-gray-300', 'dark:bg-gray-600', 'w-2');
+                dots[index].classList.add('bg-primary', 'w-6');
+            };
+
+            const moveToSlide = (index) => {
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+
+                track.style.transform = 'translateX(-' + (index * 100) + '%)';
+                currentIndex = index;
+                updateDots(index);
+            };
+
+            nextBtn.addEventListener('click', () => {
+                moveToSlide(currentIndex + 1);
+                resetTimer();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                moveToSlide(currentIndex - 1);
+                resetTimer();
+            });
+
+            // Auto Play
+            let slideInterval;
+            const startSlideTimer = () => {
+                slideInterval = setInterval(() => {
+                    moveToSlide(currentIndex + 1);
+                }, 5000);
+            };
+
+            const resetTimer = () => {
+                clearInterval(slideInterval);
+                startSlideTimer();
+            }
+
+            startSlideTimer();
+        });
+    </script>
+</body>
+
+</html>
